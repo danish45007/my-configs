@@ -87,6 +87,8 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # User configuration
 export GOPATH=$HOME/go
 PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/Users/danishsharma/.ssh
+export PATH=$PATH:$HOME/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -113,3 +115,4 @@ PATH=$PATH:$GOPATH/bin
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+set mouse-=a
