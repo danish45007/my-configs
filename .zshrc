@@ -6,6 +6,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -83,12 +85,16 @@ zsh-autosuggestions
 )
 source $ZSH/oh-my-zsh.sh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
 
 # User configuration
 export GOPATH=$HOME/go
 PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/Users/danishsharma/.ssh
 export PATH=$PATH:$HOME/bin
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff6ec7,bold,underline"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -117,3 +123,5 @@ alias ls='lsd -Fla'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 set mouse-=a
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+neofetch
