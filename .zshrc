@@ -82,6 +82,17 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=( git
 zsh-autosuggestions
+sudo
+web-search
+copydir
+copyfile
+copybuffer
+dirhistory
+history
+kubectl
+jsontools
+lol
+osx
 )
 source $ZSH/oh-my-zsh.sh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -117,8 +128,16 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff6ec7,bold,underline"
 #
 # Example aliases
 alias ls='lsd -Fla'
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vim='nvim'
+alias htop='bpytop'
+alias rload='exec zsh -l'
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias hsplit="split_tab"
+alias vsplit="vsplit_tab"
+alias ntab="tab"
+alias doc="man-preview"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -8,6 +8,8 @@ tap "mongodb/brew"
 tap "superfly/tap"
 # Run your GitHub Actions locally 🚀
 brew "act"
+# ARP scanning and fingerprinting tool
+brew "arp-scan"
 # Client for Amazon Elastic Beanstalk web service
 brew "aws-elasticbeanstalk"
 # Interpreted, interactive, object-oriented programming language
@@ -38,6 +40,8 @@ brew "jq"
 brew "k9s"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
+# Security and system auditing tool to harden systems
+brew "lynis"
 # Utility for directing compilation
 brew "make"
 # MongoDB Shell to connect, configure, query, and work with your MongoDB database
@@ -55,7 +59,7 @@ brew "portaudio"
 # File browser
 brew "ranger"
 # Persistent key-value database, with built-in net interface
-brew "redis"
+brew "redis", restart_service: true
 # Command-line interface for https://speedtest.net bandwidth tests
 brew "speedtest-cli"
 # Terminal-based client for Spotify
@@ -64,12 +68,14 @@ brew "spotify-tui"
 brew "spotifyd", restart_service: true
 # User interface to the TELNET protocol
 brew "telnet"
+# Program that allows you to count code, quickly
+brew "tokei"
 # CLI tool that moves files or folder to the trash
 brew "trash"
 # Internet file retriever
 brew "wget"
 # Centralized server for distributed coordination of services
-brew "zookeeper"
+brew "zookeeper", restart_service: true
 # UNIX shell (command interpreter)
 brew "zsh"
 # Fish shell like syntax highlighting for zsh
