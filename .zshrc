@@ -1,3 +1,8 @@
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 export PATH=/opt/homebrew/bin:$PATH
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -93,10 +98,12 @@ kubectl
 jsontools
 lol
 osx
+autojump
 )
 source $ZSH/oh-my-zsh.sh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix nvm)/nvm.sh
 
 
 
@@ -107,6 +114,7 @@ export PATH=$PATH:/Users/danishsharma/.ssh
 export PATH=$PATH:$HOME/bin
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff6ec7,bold,underline"
 # export MANPATH="/usr/local/man:$MANPATH"
+export NVM_DIR=~/.nvm
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -137,10 +145,66 @@ alias hsplit="split_tab"
 alias vsplit="vsplit_tab"
 alias ntab="tab"
 alias doc="man-preview"
-
+alias lc="leetcode"
+alias buou="brew update && brew outdated && brew upgrade && brew cleanup"
+alias npmou="npm outdated -g --depth=0 && npm update -g"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 set mouse-=a
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 neofetch
+
+# custom functions
+_weather() {
+    tmpfile=$(mktemp)
+    curl -s wttr.in/$1 > $tmpfile
+    cat $tmpfile | sed -e 's:226m:202m:g'
+    rm $tmpfile
+}
+alias weather='_weather'
+
+_share(){
+	tmpfile=$(mktemp)
+	curl -F'file=@'$1 https://0x0.st | pbcopy > $tmpfile
+	cat $tmpfile | sed -e 's:226:202m:g'
+	rm $tmpfile
+}
+alias share='_share'
+
+zshaddhistory() {
+    local line=${1%%$'\n'}
+    local cmd=${line%% *}
+    # Only those that satisfy all of the following conditions are added to the history
+    [[ ${#line} -ge 5
+       && ${cmd} != ll
+       && ${cmd} != ls
+       && ${cmd} != la
+       && ${cmd} != cd
+       && ${cmd} != man
+       && ${cmd} != scp
+       && ${cmd} != vim
+       && ${cmd} != nvim
+       && ${cmd} != less
+       && ${cmd} != ping
+       && ${cmd} != open
+       && ${cmd} != file
+       && ${cmd} != which
+       && ${cmd} != whois
+       && ${cmd} != drill
+       && ${cmd} != uname
+       && ${cmd} != md5sum
+       && ${cmd} != pacman
+       && ${cmd} != xdg-open
+       && ${cmd} != traceroute
+       && ${cmd} != speedtest-cli
+    ]]
+}
+zshaddhistory
+
+[ -f $(brew --prefix)/etc/profile.d/autojump.sh ] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
