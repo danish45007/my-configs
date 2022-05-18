@@ -31,10 +31,20 @@ brew "chezmoi"
 brew "cmake"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU compiler collection
+brew "gcc"
 # GitHub command-line tool
 brew "gh"
+# Platform built on V8 to build network applications
+brew "node"
 # Interactive command-line tool for using emoji in commit messages
-brew "gitmoji"
+brew "gitmoji", link: false
+# GNU Ubiquitous Intelligent Language for Extensions
+brew "guile"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Improved top (interactive process viewer)
@@ -53,10 +63,16 @@ brew "luv"
 brew "lynis"
 # Utility for directing compilation
 brew "make"
+# Drop-in replacement for MySQL
+brew "mariadb"
+# Run a Kubernetes cluster locally
+brew "minikube"
 # Platform built on V8 to build network applications
-brew "node@14", link: true
+brew "node@14"
 # MongoDB Shell to connect, configure, query, and work with your MongoDB database
 brew "mongosh"
+# Open source relational database management system
+brew "mysql", restart_service: true, link: false
 # NCurses Disk Usage
 brew "ncdu"
 # Fast, highly customisable system info script
@@ -87,16 +103,22 @@ brew "task"
 brew "telnet"
 # Send macOS User Notifications from the command-line
 brew "terminal-notifier"
+# Programmatically correct mistyped console commands
+brew "thefuck"
 # Terminal multiplexer
 brew "tmux"
 # Program that allows you to count code, quickly
 brew "tokei"
 # CLI tool that moves files or folder to the trash
 brew "trash"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
 # Internet file retriever
 brew "wget"
 # Access X11 clipboards from the command-line
 brew "xclip"
+# Download YouTube videos from the command-line
+brew "youtube-dl"
 # Centralized server for distributed coordination of services
 brew "zookeeper"
 # UNIX shell (command interpreter)
@@ -124,12 +146,18 @@ cask "microsoft-excel"
 cask "microsoft-teams"
 # Explore and manipulate your MongoDB data
 cask "mongodb-compass"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
 # App to write, plan, collaborate, and get organized
 cask "notion"
 # Administration and development platform for PostgreSQL
 cask "pgadmin4"
 # Collaboration platform for API development
 cask "postman"
+# Archive manager for data compression and backups
+cask "rar"
+# Move and resize windows using keyboard shortcuts or snap areas
+cask "rectangle"
 # Messaging app with a focus on speed and security
 cask "telegram"
 # Multimedia player

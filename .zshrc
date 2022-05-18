@@ -97,7 +97,7 @@ history
 kubectl
 jsontools
 lol
-osx
+macos
 autojump
 )
 source $ZSH/oh-my-zsh.sh
@@ -136,6 +136,9 @@ export NVM_DIR=~/.nvm
 #
 # Example aliases
 alias ls='lsd -Fla'
+alias mv='mv -iv'
+alias cp='cp -riv'
+alias mkdir='mkdir -vp'
 alias vim='nvim'
 alias htop='bpytop'
 alias rload='exec zsh -l'
@@ -148,7 +151,8 @@ alias doc="man-preview"
 alias lc="leetcode"
 alias buou="brew update && brew outdated && brew upgrade && brew cleanup"
 alias npmou="npm outdated -g --depth=0 && npm update -g"
-
+alias notifyDone='tput bel; terminal-notifier -title "Terminal" -message "Done with task! Exit status: $?"' -activate com.apple.Terminal
+alias pshell='bpython'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 set mouse-=a
@@ -208,3 +212,5 @@ zshaddhistory
 # Please make sure this block is at the end of this file.
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
+
+eval $(thefuck --alias)
